@@ -1,8 +1,10 @@
-# Mosp
+# MosP-Docker-Compose
+
 
 ## Description
 
-勤怠管理MospをさくっとDockerで動かせるようにしました。
+ es-mindさんの配布している勤怠管理MosPパッケージを参照し、さくっとDockerで動かせるようにしました。
+ ref: https://github.com/es-mind 
 
 ## Installation
 

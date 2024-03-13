@@ -23,4 +23,4 @@ docker compose up -d
 
 ## 事前確認
 
-Tomcatのバージョン更新に伴って、Dockerfileで参照しているTomcatの配布パッケージがリンク切れを起こす可能性があるので、Dockerfile内のTOMCAT_VERSIONを適宜編集してください。
+TomcatとMOSPはいずれも、バージョン更新に伴ってDockerfileで参照している配布パッケージがリンク切れを起こす可能性があるので、Dockerfile内のTOMCAT_VERSION、MOSP_VERSIONを適宜編集してください。

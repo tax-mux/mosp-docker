@@ -7,7 +7,10 @@ RUN apt-get install -y default-jdk wget
 RUN rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
+
 ARG TOMCAT_VERSION=9.0.86
+ARG MOSP_VERSION=4.6.7
+
 RUN wget https://downloads.apache.org/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz
 RUN tar xvf apache-tomcat-${TOMCAT_VERSION}.tar.gz
 RUN mv apache-tomcat-${TOMCAT_VERSION} /opt/tomcat9
@@ -19,6 +22,6 @@ EXPOSE 8080
 
 ENV CATALINA_WEBAPPS /opt/tomcat9/webapps
 
-RUN cd $CATALINA_WEBAPPS && wget https://github.com/es-mind/MosP/releases/download/v4.6.7/time4.war
+RUN cd $CATALINA_WEBAPPS && wget https://github.com/es-mind/MosP/releases/download/v${MOSP_VERSION}/time4.war
 
 CMD ["catalina.sh", "run"]

@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+ARG TOMCAT_VERSION=9.0.86
+ARG MOSP_VERSION=4.7.0
+
 RUN sed -i.bak -r 's!http://(jp\.)?archive\.ubuntu\.com/ubuntu/?!http://ftp.udx.icscoe.jp/Linux/ubuntu/!g' /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade -y 
@@ -7,9 +10,6 @@ RUN apt-get install -y default-jdk wget
 RUN rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
-
-ARG TOMCAT_VERSION=9.0.86
-ARG MOSP_VERSION=4.6.7
 
 RUN wget https://downloads.apache.org/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz
 RUN tar xvf apache-tomcat-${TOMCAT_VERSION}.tar.gz
